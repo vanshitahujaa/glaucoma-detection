@@ -1,0 +1,26 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install system dependencies for OpenCV
+RUN apt-get update && apt-get install -y \
+    libgl1 \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create a minimal requirements file for Docker
+RUN echo "fastapi==0.104.1\nuvicorn==0.23.2\npython-multipart==0.0.6\npydantic==2.4.2\nnumpy==1.24.3\nopencv-python-headless==4.8.0.74\ntorch==2.0.1\ntorchvision==0.15.2\npytorch-grad-cam==0.2.1" > docker-requirements.txt
+
+# Install dependencies with optimizations
+RUN pip install --no-cache-dir -r docker-requirements.txt
+
+# Copy the model and backend code
+COPY model/ /app/model/
+COPY backend/ /app/backend/
+COPY utils/ /app/utils/
+
+# Expose the port
+EXPOSE 8000
+
+# Command to run the application
+CMD ["python", "-m", "uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,72 @@
+# Node.js dependencies
+frontend/node_modules/
+
+# Python virtual environment
+*.env
+*.venv
+*.virtualenv
+env/
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Model weights (binary files)
+model/weights/
+
+# Docker files (unless you want to version your docker-related files)
+docker/*.log
+docker/*.pid
+
+# VSCode specific files
+.vscode/
+
+# PyCharm specific files
+.idea/
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+
+# Ignore pip environment folder
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore compiled files
+*.so
+*.dylib
+*.dll
+
+# Ignore any personal config files (e.g. IDEs, Editors)
+*.swp
+*.swo
+*~
+
+# Ignore Grad-CAM output
+utils/gradcam_output/
+
+# FastAPI app log files
+backend/*.log
+
+# Ignore package-lock.json, yarn.lock (if you're not using them)
+frontend/package-lock.json
+frontend/yarn.lock
+
+# Ignore the entire datasets folder (raw and processed)
+data/
+node_modules
+.env
+dist
+build
+.DS_Store
+*.log
