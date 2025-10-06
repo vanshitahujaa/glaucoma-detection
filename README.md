@@ -170,8 +170,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - The public datasets used for training
 - PyTorch and FastAPI communities
 - React and TypeScript communities# glaucoma-detection
-# glaucoma-detection
-# glaucoma-detection
-# glaucoma-detection
-# glaucoma-detection
-# glaucoma-detection
+
